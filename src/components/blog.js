@@ -1,11 +1,12 @@
+// App.js
 import React from "react";
-import BlogEditor from "./BlogEditor";
+
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <BlogEditor />
-      {/* Additional components or content */}
+    <div className="min-h-90 w-90 bg-gray-100  flex-col my-5 p-6 flex items-center justify-center">
+      <Outlet />
     </div>
   );
 }

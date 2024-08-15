@@ -7,7 +7,7 @@ const header = () => {
         <nav className="container mx-auto flex items-center justify-between py-4 px-6">
           {/* Blog Logo */}
           <div className="text-3xl font-bold text-gray-800">
-            <a href="/" className="text-blue-500">
+            <a href="/" className="text-blue-500 mx-5">
               MyBlog
             </a>
           </div>
@@ -17,14 +17,8 @@ const header = () => {
             <a href="/" className="text-gray-700 hover:text-blue-500">
               Home
             </a>
-            <a href="/categories" className="text-gray-700 hover:text-blue-500">
+            <a href="/new" className="text-gray-700 hover:text-blue-500">
               Add New
-            </a>
-            <a href="/about" className="text-gray-700 hover:text-blue-500">
-              About
-            </a>
-            <a href="/contact" className="text-gray-700 hover:text-blue-500">
-              Contact
             </a>
           </div>
 

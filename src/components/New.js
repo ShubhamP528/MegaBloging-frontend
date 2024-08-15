@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NewBLog = () => {
+const NewBlog = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [media, setMedia] = useState(null);
