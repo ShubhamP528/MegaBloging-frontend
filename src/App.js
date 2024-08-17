@@ -2,7 +2,6 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Show from "./components/Show";
-import { Card } from "./components/Card";
 import New from "./components/New";
 import SignupForm from "./components/Signup";
 import SigninForm from "./components/Signin";
@@ -21,7 +20,7 @@ const appRouter = createBrowserRouter([
         element: <Blogs />,
       },
       {
-        path: "show",
+        path: "blog/:id",
         element: <Show />,
       },
       {
