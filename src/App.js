@@ -1,21 +1,24 @@
-import Header from "./components/header";
-import Blog from "./components/blog";
+import Header from "./components/Header";
+import Main from "./components/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Show from "./components/show";
-import { Card } from "./components/card";
+import Show from "./components/Show";
+import { Card } from "./components/Card";
 import New from "./components/New";
 import SignupForm from "./components/Signup";
-import SigninForm from "./components/signin";
-import Footer from "./components/footer";
+import SigninForm from "./components/Signin";
+import Footer from "./components/Footer";
+import { Provider } from "react-redux";
+import store from "./utils/store"; // Import the store you just configured
+import Blogs from "./components/Blogs";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Blog />,
+    element: <Main />,
     children: [
       {
         path: "/",
-        element: <Card />,
+        element: <Blogs />,
       },
       {
         path: "show",
@@ -39,11 +42,13 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <RouterProvider router={appRouter} />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <RouterProvider router={appRouter} />
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 
