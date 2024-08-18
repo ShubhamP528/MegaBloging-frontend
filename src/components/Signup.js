@@ -73,7 +73,7 @@ function SignupForm() {
       });
       const data = await response.json();
       console.log(data);
-      dispatch(setUser(JSON.stringify(data)));
+      dispatch(setUser(data));
       setIsSubmitted(true);
       toast.success("Welcome! You have successfully signed up");
       navigate("/");
