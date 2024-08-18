@@ -12,7 +12,7 @@
 .shimmer-date,
 .shimmer-count,
 .shimmer-content,
-.shimmer-image {
+.shimmer-image-show {
   background: linear-gradient(
     90deg,
     rgba(200, 200, 200, 0.3) 25%,
@@ -51,7 +51,7 @@
   width: 50%;
 }
 
-.shimmer-image {
+.shimmer-image-show {
   height: 16rem;
 }
 

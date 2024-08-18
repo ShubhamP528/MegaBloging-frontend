@@ -168,7 +168,7 @@ const Shimmer = () => (
 
       {/* Blog Title and Image */}
       <div className="shimmer-title h-6 bg-gray-300 rounded w-full mb-4"></div>
-      <div className="shimmer-image w-full h-64 bg-gray-300 rounded-lg mb-4"></div>
+      <div className="shimmer-image-show w-full h-64 bg-gray-300 rounded-lg mb-4"></div>
 
       {/* Blog Content */}
       <div className="shimmer-content bg-gray-300 rounded h-48"></div>

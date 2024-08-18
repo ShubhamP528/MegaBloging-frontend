@@ -15,7 +15,7 @@ function PostCard(props) {
 
   return (
     <Link to={`/blog/${props.id}`}>
-      <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row mb-6 hover:shadow-lg transition-shadow duration-300">
+      <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row  mb-6 hover:shadow-lg transition-shadow duration-300">
         {/* Left side - Author info */}
         <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-4">
           <img
@@ -72,8 +72,8 @@ function PostCard(props) {
             <img
               src={props.Img}
               alt={props.Title || "Post Image"}
-              className="object-cover rounded-lg"
-              style={{ width: "100%", height: "auto", maxWidth: "150px" }} // Adjust image size for mobile and desktop
+              className="object-cover rounded-lg w-full h-full md:max-w-[150px]"
+              style={{ width: "100%", height: "auto" }} // Adjust image size for mobile and desktop
             />
           </div>
         )}
