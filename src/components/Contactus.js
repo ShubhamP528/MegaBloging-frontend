@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { NODE_API_ENDPOINT } from "../utils/utils";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const ContactUs = () => {
     setLoading(true); // Set loading to true when the form is being submitted
 
     try {
-      const response = await fetch("/api/v1/contact", {
+      const response = await fetch(`${NODE_API_ENDPOINT}/api/v1/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
