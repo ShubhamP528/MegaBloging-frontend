@@ -4,6 +4,7 @@ import { setUser } from "../utils/auth";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { NODE_API_ENDPOINT } from "../utils/utils";
 
 function SigninForm() {
   const [formData, setFormData] = useState({
@@ -55,7 +56,7 @@ function SigninForm() {
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
       console.log("Form Data Submitted:", formData);
-      const response = await fetch("/api/v1/login", {
+      const response = await fetch(`${NODE_API_ENDPOINT}/api/v1/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

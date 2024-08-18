@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { NODE_API_ENDPOINT } from "./utils";
 
 export const retrieveBlogAuth = createAsyncThunk(
   "auth/retrieveAuth",
@@ -8,7 +9,7 @@ export const retrieveBlogAuth = createAsyncThunk(
     if (storedAuth) {
       const parsedUser = JSON.parse(storedAuth);
       // if (parsedUser.expiresAt < new Date().valueOf()) return null;
-      const props = await fetch(`/api/v1/getUser`, {
+      const props = await fetch(`${NODE_API_ENDPOINT}/api/v1/getUser`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${parsedUser.token}`,

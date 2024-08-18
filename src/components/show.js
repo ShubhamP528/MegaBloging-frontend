@@ -10,6 +10,7 @@ import {
   FaEllipsisH,
 } from "react-icons/fa";
 import "./ShimmerShow.css"; // Ensure you import the CSS file
+import { NODE_API_ENDPOINT } from "../utils/utils";
 
 // Function to format date
 const formatDate = (dateString) => {
@@ -27,9 +28,12 @@ const Show = () => {
 
     const fetchBlog = async () => {
       try {
-        const fetchData = await fetch(`/api/v1/blog/${id}`, {
-          method: "GET",
-        });
+        const fetchData = await fetch(
+          `${NODE_API_ENDPOINT}/api/v1/blog/${id}`,
+          {
+            method: "GET",
+          }
+        );
         const json = await fetchData.json();
         setBlog({
           ...json.response,

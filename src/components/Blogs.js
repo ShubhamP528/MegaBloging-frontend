@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import "./ShimmerCard.css"; // Import the external CSS file for styling
+import { NODE_API_ENDPOINT } from "../utils/utils";
 
 const Shimmer = () => (
   <div className="shimmer-card bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row mb-6">
@@ -31,7 +32,9 @@ function Blogs() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const fetchData = await fetch("/api/v1/blogs", { method: "GET" });
+        const fetchData = await fetch(`${NODE_API_ENDPOINT}/api/v1/blogs`, {
+          method: "GET",
+        });
         const json = await fetchData.json();
         setBlogs(json.response);
       } catch (error) {

@@ -4,6 +4,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill's CSS
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { NODE_API_ENDPOINT } from "../utils/utils";
 
 const NewBlog = () => {
   const [title, setTitle] = useState("");
@@ -80,7 +81,7 @@ const NewBlog = () => {
     }
 
     try {
-      const response = await fetch("/api/v1/blog", {
+      const response = await fetch(`${NODE_API_ENDPOINT}/api/v1/blog`, {
         method: "POST",
         body: formData,
       });
