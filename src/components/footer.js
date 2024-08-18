@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -19,24 +20,24 @@ function Footer() {
             <h2 className="text-lg font-bold mb-2">Quick Links</h2>
             <ul className="text-gray-400">
               <li>
-                <a href="/" className="hover:text-white">
+                <Link to="/" className="hover:text-white">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/" className="hover:text-white">
+                <Link to="/about" className="hover:text-white">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/" className="hover:text-white">
+                <Link to="/contact" className="hover:text-white">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/" className="hover:text-white">
+                <Link to="/privacy-policy" className="hover:text-white">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,0 +1,91 @@
+/* Shimmer.css */
+
+.shimmer-card {
+  display: flex;
+  flex-direction: column; /* Ensure column layout for small screens */
+  margin-bottom: 1.5rem;
+  width: 70vw;
+}
+
+.author-info {
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-bottom: 1rem;
+}
+
+.shimmer-author-img {
+  background: linear-gradient(
+    90deg,
+    rgba(200, 200, 200, 0.3) 25%,
+    rgba(220, 220, 220, 0.2) 50%,
+    rgba(200, 200, 200, 0.3) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.post-content {
+  flex-grow: 1;
+}
+
+.shimmer-author-name,
+.shimmer-title,
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    rgba(200, 200, 200, 0.3) 25%,
+    rgba(220, 220, 220, 0.2) 50%,
+    rgba(200, 200, 200, 0.3) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.shimmer-author-name {
+  height: 1rem;
+  width: 66%;
+  margin-bottom: 0.25rem;
+}
+
+.shimmer-title {
+  height: 1.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.shimmer-text {
+  height: 1rem;
+  width: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.post-image {
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-top: 1rem; /* Add top margin for spacing */
+}
+
+.shimmer-image {
+  background: linear-gradient(
+    90deg,
+    rgba(200, 200, 200, 0.3) 25%,
+    rgba(220, 220, 220, 0.2) 50%,
+    rgba(200, 200, 200, 0.3) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .shimmer-card {
+    flex-direction: row; /* Row layout for larger screens */
+  }
+}

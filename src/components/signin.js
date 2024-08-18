@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "../utils/auth";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function SigninForm() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+  const user = useSelector((store) => store.auth.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(user?.username);
+    if (user?.username !== undefined) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -34,14 +50,26 @@ function SigninForm() {
     return errors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validateForm();
     if (Object.keys(errors).length === 0) {
       console.log("Form Data Submitted:", formData);
+      const response = await fetch("/api/v1/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      console.log(data);
+      // dispatch(setUser(JSON.stringify(data)));
+      dispatch(setUser(data));
       setIsSubmitted(true);
+      toast.success("Login successfully");
+      navigate("/");
     } else {
       setFormErrors(errors);
+      toast.error("Invalid email or password");
     }
   };
 
@@ -49,7 +77,8 @@ function SigninForm() {
     <div className="flex justify-center items-center h-screen">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md w-96">
+        className="bg-white p-8 rounded shadow-md w-96"
+      >
         <h2 className="text-2xl font-bold mb-4">Sign In</h2>
 
         {isSubmitted && (
@@ -92,7 +121,8 @@ function SigninForm() {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+        >
           Sign In
         </button>
       </form>

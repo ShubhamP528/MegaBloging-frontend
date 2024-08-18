@@ -1,14 +1,17 @@
-import Header from "./components/Header";
 import Main from "./components/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Show from "./components/Show";
 import New from "./components/New";
 import SignupForm from "./components/Signup";
 import SigninForm from "./components/Signin";
-import Footer from "./components/Footer";
 import { Provider } from "react-redux";
 import store from "./utils/store"; // Import the store you just configured
 import Blogs from "./components/Blogs";
+import { useEffect } from "react";
+import { retrieveBlogAuth } from "./utils/auth";
+import About from "./components/About";
+import ContactUs from "./components/Contactus";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 const appRouter = createBrowserRouter([
   {
@@ -24,7 +27,7 @@ const appRouter = createBrowserRouter([
         element: <Show />,
       },
       {
-        path: "new",
+        path: "write",
         element: <New />,
       },
       {
@@ -35,18 +38,31 @@ const appRouter = createBrowserRouter([
         path: "signin",
         element: <SigninForm />,
       },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
+        element: <ContactUs />,
+      },
+      {
+        path: "privacy-policy",
+        element: <PrivacyPolicy />,
+      },
     ],
   },
 ]);
 
 function App() {
+  useEffect(() => {
+    // store.dispatch(retrieveAuth());
+    store.dispatch(retrieveBlogAuth());
+  }, []);
+
   return (
     <Provider store={store}>
-      <div className="App">
-        <Header />
-        <RouterProvider router={appRouter} />
-        <Footer />
-      </div>
+      <RouterProvider router={appRouter}></RouterProvider>
     </Provider>
   );
 }
