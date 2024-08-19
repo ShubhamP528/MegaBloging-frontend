@@ -170,7 +170,7 @@ function Blogs() {
             onClick={() => canScrollLeft && handleScroll("left")}
           />
           <ul
-            className="scrollable-nav flex justify-start md:justify-center space-x-0 text-gray-700 overflow-x-auto"
+            className="scrollable-nav flex text-xs md:text-sm justify-start md:justify-center space-x-0 text-gray-700 overflow-x-auto"
             ref={scrollRef}
             onScroll={updateScrollButtons}
           >

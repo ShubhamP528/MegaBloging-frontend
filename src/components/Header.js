@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../utils/auth";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { AiOutlineEdit } from "react-icons/ai"; // Import the write icon
+import { AiOutlineEdit, AiOutlineClose } from "react-icons/ai"; // Import the write and close icons
 
 const Header = () => {
   const user = useSelector((store) => store.auth.user);
@@ -26,8 +26,8 @@ const Header = () => {
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Blog Logo */}
         <div className="text-3xl font-bold text-gray-800">
-          <Link to="/" className="text-blue-500 mx-5">
-            MyBlog
+          <Link to="/" className="text-blue-500 mx-5 md:text-3xl text-2xl">
+            AkBlogs
           </Link>
         </div>
 
@@ -116,6 +116,15 @@ const Header = () => {
         }`}
       >
         <nav className="flex flex-col py-4 px-6">
+          {/* Close Button */}
+          <button
+            className="self-end text-gray-700"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <AiOutlineClose className="w-6 h-6" />
+          </button>
+
           <Link
             to="/"
             className="text-gray-700 hover:text-blue-500 py-2 flex items-center"
@@ -141,7 +150,7 @@ const Header = () => {
                   handleLogout();
                   setIsOpen(false);
                 }}
-                className="bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600"
+                className="bg-red-500 text-white w-1/4 py-2 px-4 rounded-full hover:bg-red-600"
               >
                 Logout
               </button>
@@ -157,7 +166,7 @@ const Header = () => {
               </Link>
               <Link
                 to="/signup"
-                className="bg-blue-500 text-white  px-4 rounded-full hover:bg-blue-600 py-2"
+                className="bg-blue-500 text-white px-4 rounded-full hover:bg-blue-600 py-2"
                 onClick={() => setIsOpen(false)}
               >
                 Sign Up

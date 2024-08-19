@@ -57,6 +57,8 @@ const Show = () => {
     };
 
     fetchBlog();
+    // Scroll to top after filtering
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
 
   if (!blog) {
@@ -107,7 +109,7 @@ const Show = () => {
         </div>
 
         {/* Blog Title and Image */}
-        <h2 className="text-4xl font-bold mb-4 text-gray-800 font-playfair">
+        <h2 className="md:text-4xl text-2xl font-bold mb-4 text-gray-800 font-playfair">
           {blog.Title || "Default Blog Title"}
         </h2>
         <img
