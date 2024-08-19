@@ -43,7 +43,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-500 to-purple-500 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-blue-500 to-purple-500 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 rounded-lg">
       <div className="w-full max-w-7xl bg-white shadow-2xl rounded-2xl p-8 md:flex md:space-x-10 relative">
         {/* Decorative Background Circles */}
         <div className="absolute top-0 left-0 w-48 h-48 bg-blue-300 rounded-full opacity-20 animate-ping -z-10"></div>

@@ -2,9 +2,8 @@
 
 .shimmer-card {
   display: flex;
-  flex-direction: column; /* Ensure column layout for small screens */
-  margin-bottom: 1.5rem;
-  width: 70vw;
+  flex-direction: row; /* Ensure column layout for small screens */
+  width: 100vw;
 }
 
 .author-info {
@@ -48,7 +47,7 @@
 
 .shimmer-title {
   height: 1.5rem;
-  width: 100%;
+  /* width: 100%; */
   margin-bottom: 0.5rem;
 }
 
@@ -86,6 +85,7 @@
 /* Media Queries */
 @media (min-width: 768px) {
   .shimmer-card {
-    flex-direction: row; /* Row layout for larger screens */
+    flex-direction: row;
+    width: 70vw;
   }
 }

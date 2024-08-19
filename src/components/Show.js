@@ -9,7 +9,7 @@ import {
   FaShareAlt,
   FaEllipsisH,
 } from "react-icons/fa";
-import "./ShimmerShow.css"; // Ensure you import the CSS file
+import "./ShimmerShow.css";
 import { NODE_API_ENDPOINT } from "../utils/utils";
 
 // Function to format date
@@ -43,7 +43,6 @@ const Show = () => {
         console.log(json.response);
       } catch (error) {
         console.error("Error fetching blog data:", error);
-        // Set default values if an error occurs
         setBlog({
           Title: "Default Blog Title",
           Img: "https://images.unsplash.com/photo-15719937206642-ca0cd57198cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHx8MHx8fHx8",
@@ -51,8 +50,8 @@ const Show = () => {
           Author: "Default Author",
           AuthorImg: "https://via.placeholder.com/80",
           Date: "January 1, 2024",
-          Claps: 218, // Default clap count
-          Comments: 2, // Default comment count
+          Claps: 218,
+          Comments: 2,
         });
       }
     };
@@ -65,7 +64,7 @@ const Show = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center py-10 px-4 w-[75vw]">
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-1 md:px-4 md:w-[75vw] w-[100vw]">
       <div className="bg-white shadow-lg rounded-lg p-6 max-w-3xl w-full">
         {/* Author Section */}
         <div className="flex items-center mb-4">
@@ -78,7 +77,7 @@ const Show = () => {
             className="w-10 h-10 rounded-full mr-4"
           />
           <div>
-            <p className="text-gray-800 font-semibold">
+            <p className="text-gray-800 font-semibold text-lg">
               {blog.Author || "Default Author"}
             </p>
             <p className="text-gray-600 text-sm">
@@ -108,7 +107,7 @@ const Show = () => {
         </div>
 
         {/* Blog Title and Image */}
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">
+        <h2 className="text-4xl font-bold mb-4 text-gray-800 font-playfair">
           {blog.Title || "Default Blog Title"}
         </h2>
         <img
@@ -122,7 +121,7 @@ const Show = () => {
 
         {/* Blog Content */}
         <div
-          className="text-gray-700 leading-relaxed"
+          className="text-gray-700 leading-relaxed font-merriweather"
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(
               blog.Content || "This is the default content of the blog."
@@ -175,4 +174,5 @@ const Shimmer = () => (
     </div>
   </div>
 );
+
 export default Show;

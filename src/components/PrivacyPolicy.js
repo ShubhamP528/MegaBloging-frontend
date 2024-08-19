@@ -1,124 +1,195 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="bg-gray-100 min-h-screen py-10">
-      <motion.div
+    <motion.div
+      className="bg-gray-100 min-h-screen py-10 px-5 sm:px-10 lg:px-20"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.h1
+        className="text-4xl font-bold text-center mb-8"
+        initial={{ x: "-100vw" }}
+        animate={{ x: 0 }}
+        transition={{ type: "spring", stiffness: 50 }}
+      >
+        Privacy Policy
+      </motion.h1>
+
+      <motion.p className="text-center text-gray-600 mb-5">
+        Last updated: August 19, 2024
+      </motion.p>
+
+      <motion.section
+        className="space-y-5 text-gray-700 leading-relaxed"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="max-w-full bg-white shadow-xl rounded-lg p-8 mx-auto"
+        transition={{ delay: 0.2, duration: 0.8 }}
       >
-        <h1 className="text-4xl font-bold mb-6 text-gray-800 text-center">
-          Privacy Policy
-        </h1>
-        <p className="text-gray-600 mb-4 text-center">
-          Effective Date: [Insert Date]
+        <p>
+          This Privacy Policy describes Our policies and procedures on the
+          collection, use and disclosure of Your information when You use the
+          Service and tells You about Your privacy rights and how the law
+          protects You.
         </p>
 
-        {/* Section 1: Introduction */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            1. Introduction
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            Welcome to Blogging App. We are committed to protecting your privacy
-            and ensuring a safe online experience. This Privacy Policy explains
-            how we collect, use, disclose, and safeguard your information when
-            you use our website and services. Please read this policy carefully.
-          </p>
-        </section>
+        <p>
+          We use Your Personal data to provide and improve the Service. By using
+          the Service, You agree to the collection and use of information in
+          accordance with this Privacy Policy. This Privacy Policy has been
+          created with the help of the{" "}
+          <Link
+            to="https://www.freeprivacypolicy.com/free-privacy-policy-generator/"
+            target="_blank"
+            className="text-blue-500 hover:underline"
+          >
+            Free Privacy Policy Generator
+          </Link>
+          .
+        </p>
 
-        {/* Section 2: Information We Collect */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            2. Information We Collect
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            We may collect and process the following types of information:
-          </p>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>
-              Personal Information: Name, email address, phone number, etc.
-            </li>
-            <li>
-              Usage Data: Information about how you interact with our site.
-            </li>
-            <li>
-              Cookies and Tracking Technologies: To enhance your experience and
-              gather information about usage patterns.
-            </li>
-          </ul>
-        </section>
+        <h2 className="text-2xl font-semibold mt-10">
+          Interpretation and Definitions
+        </h2>
 
-        {/* Section 3: How We Use Your Information */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            3. How We Use Your Information
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            We use the collected information for various purposes, including:
-          </p>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>To provide and maintain our services.</li>
-            <li>To notify you about changes to our services.</li>
-            <li>To provide customer support.</li>
-            <li>
-              To gather analysis or valuable information so that we can improve
-              our services.
-            </li>
-            <li>To monitor the usage of our services.</li>
-          </ul>
-        </section>
+        <h3 className="text-xl font-semibold">Interpretation</h3>
+        <p>
+          The words of which the initial letter is capitalized have meanings
+          defined under the following conditions. The following definitions
+          shall have the same meaning regardless of whether they appear in
+          singular or in plural.
+        </p>
 
-        {/* Section 4: Sharing Your Information */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            4. Sharing Your Information
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            We do not share your personal information with third parties except
-            in the following cases:
-          </p>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>With your consent.</li>
-            <li>To comply with legal obligations.</li>
-            <li>To protect and defend our rights and property.</li>
-            <li>
-              To prevent or investigate possible wrongdoing in connection with
-              our services.
-            </li>
-          </ul>
-        </section>
+        <h3 className="text-xl font-semibold">Definitions</h3>
+        <p>For the purposes of this Privacy Policy:</p>
 
-        {/* Section 5: Security */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            5. Security of Your Information
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            We use commercially reasonable administrative, technical, and
-            physical security measures to help protect your personal
-            information. However, no method of transmission over the Internet or
-            method of electronic storage is 100% secure. Therefore, we cannot
-            guarantee its absolute security.
-          </p>
-        </section>
+        <ul className="list-disc pl-5 space-y-3">
+          <li>
+            <strong>Account</strong> means a unique account created for You to
+            access our Service or parts of our Service.
+          </li>
+          <li>
+            <strong>Affiliate</strong> means an entity that controls, is
+            controlled by or is under common control with a party, where
+            &quot;control&quot; means ownership of 50% or more of the shares,
+            equity interest or other securities entitled to vote for election of
+            directors or other managing authority.
+          </li>
+          <li>
+            <strong>Company</strong> (referred to as either &quot;the
+            Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
+            this Agreement) refers to Abhay blogs.
+          </li>
+          <li>
+            <strong>Cookies</strong> are small files that are placed on Your
+            computer, mobile device or any other device by a website, containing
+            the details of Your browsing history on that website among its many
+            uses.
+          </li>
+          <li>
+            <strong>Country</strong> refers to: Uttar Pradesh, India
+          </li>
+          <li>
+            <strong>Device</strong> means any device that can access the Service
+            such as a computer, a cellphone or a digital tablet.
+          </li>
+          <li>
+            <strong>Personal Data</strong> is any information that relates to an
+            identified or identifiable individual.
+          </li>
+          <li>
+            <strong>Service</strong> refers to the Website.
+          </li>
+          <li>
+            <strong>Service Provider</strong> means any natural or legal person
+            who processes the data on behalf of the Company.
+          </li>
+          <li>
+            <strong>Third-party Social Media Service</strong> refers to any
+            website or any social network website through which a User can log
+            in or create an account to use the Service.
+          </li>
+          <li>
+            <strong>Usage Data</strong> refers to data collected automatically,
+            either generated by the use of the Service or from the Service
+            infrastructure itself (for example, the duration of a page visit).
+          </li>
+          <li>
+            <strong>Website</strong> refers to Abhay blogs, accessible from{" "}
+            <Link
+              to="https://abhay-blogs.netlify.app/"
+              rel="external nofollow noopener"
+              target="_blank"
+              className="text-blue-500 hover:underline"
+            >
+              https://abhay-blogs.netlify.app/
+            </Link>
+          </li>
+          <li>
+            <strong>You</strong> means the individual accessing or using the
+            Service, or the company, or other legal entity on behalf of which
+            such individual is accessing or using the Service, as applicable.
+          </li>
+        </ul>
 
-        {/* Contact Us */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            6. Contact Us
-          </h2>
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>Email: support@bloggingapp.com</li>
-            <li>Phone: +123 456 7890</li>
-            <li>Address: [Your Company Address]</li>
-          </ul>
-        </section>
-      </motion.div>
-    </div>
+        <h2 className="text-2xl font-semibold mt-10">
+          Collecting and Using Your Personal Data
+        </h2>
+        <h3 className="text-xl font-semibold">Types of Data Collected</h3>
+
+        <h4 className="text-lg font-semibold">Personal Data</h4>
+        <p>
+          While using Our Service, We may ask You to provide Us with certain
+          personally identifiable information that can be used to contact or
+          identify You. Personally identifiable information may include, but is
+          not limited to:
+        </p>
+
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Email address</li>
+          <li>First name and last name</li>
+          <li>Phone number</li>
+          <li>Address, State, Province, ZIP/Postal code, City</li>
+          <li>Usage Data</li>
+        </ul>
+
+        <h4 className="text-lg font-semibold">Usage Data</h4>
+        <p>
+          Usage Data is collected automatically when using the Service. It may
+          include information such as Your Device's IP address, browser type,
+          browser version, the pages of our Service that You visit, the time and
+          date of Your visit, and the time spent on those pages.
+        </p>
+
+        <h4 className="text-lg font-semibold">
+          Information from Third-Party Social Media Services
+        </h4>
+        <p>
+          The Company allows You to create an account and log in to use the
+          Service through the following Third-party Social Media Services:
+        </p>
+
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Google</li>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+          <li>LinkedIn</li>
+        </ul>
+
+        <h4 className="text-lg font-semibold">
+          Tracking Technologies and Cookies
+        </h4>
+        <p>
+          We use Cookies and similar tracking technologies to track the activity
+          on Our Service and store certain information. Tracking technologies we
+          use may include Cookies, Web Beacons, and similar tools.
+        </p>
+      </motion.section>
+    </motion.div>
   );
 };
 

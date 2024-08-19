@@ -3,7 +3,7 @@ import { FaUsers, FaRegLightbulb, FaHeart } from "react-icons/fa"; // Import ico
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 min-h-screen py-10 px-4">
+    <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 min-h-screen w-full">
       {/* Full-Width Section */}
       <div className="w-full bg-white shadow-lg rounded-lg p-8 relative overflow-hidden">
         {/* Decorative Background Circles */}

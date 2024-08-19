@@ -30,4 +30,28 @@
 .scrollable-nav {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  list-style: none;
+}
+
+/* Add this CSS in your ShimmerCard.css or directly in your component's CSS */
+.scrollable-nav {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+}
+
+.scrollable-nav::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on Webkit (Chrome, Safari, etc.) */
+}
+
+.scrollable-nav li {
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.cursor-pointer {
+  flex-shrink: 0;
+  min-width: max-content; /* Ensure the items don't shrink and remain visible */
 }
