@@ -107,7 +107,7 @@ function Blogs() {
               onClick={() => canScrollLeft && handleScroll("left")}
             />
             <ul
-              className="scrollable-nav flex md:justify-start space-x-6 text-gray-700 overflow-x-auto"
+              className="scrollable-nav flex justify-start md:justify-start space-x-6 text-gray-700 overflow-x-auto"
               ref={scrollRef}
               onScroll={updateScrollButtons}
             >
@@ -134,7 +134,7 @@ function Blogs() {
           </div>
         </header>
 
-        <main className="container mt-8 md:mt-5">
+        <main className="container mt-14 md:mt-8">
           {[...Array(10)].map((_, index) => (
             <Shimmer key={index} />
           ))}{" "}
@@ -170,7 +170,7 @@ function Blogs() {
             onClick={() => canScrollLeft && handleScroll("left")}
           />
           <ul
-            className="scrollable-nav flex md:justify-start space-x-6 text-gray-700 overflow-x-auto"
+            className="scrollable-nav flex justify-start md:justify-center space-x-0 text-gray-700 overflow-x-auto"
             ref={scrollRef}
             onScroll={updateScrollButtons}
           >
@@ -237,7 +237,7 @@ function Blogs() {
         </div>
       </header>
 
-      <main className="container mt-8 md:mt-8">{Cardlist}</main>
+      <main className="container mt-14 md:mt-8">{Cardlist}</main>
     </div>
   );
 }

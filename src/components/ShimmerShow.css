@@ -3,7 +3,7 @@
 .shimmer-card-show {
   position: relative;
   overflow: hidden;
-  width: 70vw;
+  width: 100vw;
 }
 
 .shimmer-author-img,
@@ -55,15 +55,18 @@
   height: 16rem;
 }
 
-.shimmer-content {
-  height: 12rem;
-}
-
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
   }
   100% {
     background-position: 200% 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .shimmer-card-show {
+    flex-direction: row;
+    width: 70vw;
   }
 }

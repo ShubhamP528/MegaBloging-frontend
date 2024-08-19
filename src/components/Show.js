@@ -64,7 +64,7 @@ const Show = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-1 md:px-4 md:w-[75vw] w-[100vw]">
+    <div className="bg-gray-100 min-h-screen flex items-start md:items-center justify-center md:px-4 md:w-[75vw] w-[100vw]">
       <div className="bg-white shadow-lg rounded-lg p-6 max-w-3xl w-full">
         {/* Author Section */}
         <div className="flex items-center mb-4">
@@ -116,7 +116,7 @@ const Show = () => {
             "https://images.unsplash.com/photo-15719937206642-ca0cd57198cc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHx8MHx8fHx8"
           }
           alt={blog.Title || "Blog Image"}
-          className="w-full h-64 object-cover rounded-lg mb-4"
+          className="w-full h-full object-cover rounded-lg mb-4"
         />
 
         {/* Blog Content */}
@@ -134,11 +134,16 @@ const Show = () => {
 };
 
 const Shimmer = () => (
-  <div className="bg-gray-100 min-h-screen flex items-center justify-center py-10 px-4">
-    <div className="bg-white shadow-lg rounded-lg p-6 max-w-3xl w-full shimmer-card-show">
+  <div className="bg-gray-100 min-h-screen flex items-start md:items-center justify-center w-full h-[100vh]">
+    <div className="bg-white shadow-lg rounded-lg p-6 max-w-3xl w-full h-full shimmer-card-show">
       {/* Author Section */}
       <div className="flex items-center mb-4">
         <div className="shimmer-author-img w-10 h-10 rounded-full mr-4"></div>
+        <div className="flex justify-center flex-col gap-1">
+          <div className="shimmer-content bg-gray-300 rounded h-3 mb-2 w-16"></div>
+          <div className="shimmer-content bg-gray-300 rounded h-2  w-8"></div>
+        </div>
+
         <div>
           <div className="shimmer-author-name h-4 bg-gray-300 rounded w-2/3 mb-1"></div>
           <div className="shimmer-date h-4 bg-gray-300 rounded w-1/2"></div>
@@ -170,7 +175,31 @@ const Shimmer = () => (
       <div className="shimmer-image-show w-full h-64 bg-gray-300 rounded-lg mb-4"></div>
 
       {/* Blog Content */}
-      <div className="shimmer-content bg-gray-300 rounded h-48"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4 w-2/3"></div>
+
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4 w-2/3"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4 w-2/3"></div>
+
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4 w-2/3"></div>
+
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      <div className="shimmer-content bg-gray-300 rounded h-5 mb-4"></div>
+      {/* <div className="shimmer-title h-6 bg-gray-300 rounded w-full mb-4"></div>
+      <div className="shimmer-title h-6 bg-gray-300 rounded w-full mb-4"></div>
+      <div className="shimmer-title h-6 bg-gray-300 rounded w-full mb-4"></div>
+      <div className="shimmer-title h-6 bg-gray-300 rounded w-full mb-4"></div> */}
     </div>
   </div>
 );
