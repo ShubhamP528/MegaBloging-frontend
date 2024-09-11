@@ -61,7 +61,7 @@ const Header = () => {
           >
             Home
           </Link>
-          {user?.username === "admin" && (
+          {user?.username === "Admin" && (
             <Link
               to="/write"
               className="text-gray-700 hover:text-blue-500 py-2 flex items-center"
@@ -132,7 +132,7 @@ const Header = () => {
           >
             Home
           </Link>
-          {user?.username === "admin" && (
+          {user?.username === "Admin" && (
             <Link
               to="/write"
               className="text-gray-700 hover:text-blue-500 py-2 flex items-center"
