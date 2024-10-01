@@ -27,7 +27,7 @@ const Header = () => {
         {/* Blog Logo */}
         <div className="text-3xl font-bold text-gray-800">
           <Link to="/" className="text-blue-500 mx-5 md:text-3xl text-2xl">
-            AkBlogs
+            Abhay
           </Link>
         </div>
 
